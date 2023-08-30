@@ -6,6 +6,7 @@ This is a Spring Boot application that demonstrates a simple REST API for managi
 - [Overview](#overview)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
+  - [ScreenShots](#screenshots)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
