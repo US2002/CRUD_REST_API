@@ -15,7 +15,7 @@ This is a Spring Boot application that demonstrates a simple REST API for managi
 
 ## Overview
 
-This Spring Boot application provides a REST API for managing user data. It allows you to perform CRUD (Create, Read, Update, Delete) operations on user records. The application uses a MySQL database to store user information, and it employs basic security measures.
+This Spring Boot application provides a REST API for managing user data. It lets you perform CRUD (Create, Read, Update, Delete) operations on user records. The application uses a MySQL database to store user information and employs basic security measures.
 
 ## Technologies Used
 
@@ -31,8 +31,19 @@ This Spring Boot application provides a REST API for managing user data. It allo
 
 ## Screenshots
 
-![App Screenshot](https://github.com/US2002/Temperature_Conversion/blob/main/assets/Screenshot%20(19).png)
-![App Screenshot](https://github.com/US2002/Temperature_Conversion/blob/main/assets/2023-07-20%2004-21-09.mkv)
+- Home Page
+![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/HomePage.png)
+- Save User
+![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/save.png)
+- Get all Users
+![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/users.png)
+- Get User by ID
+![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/user_id.png)
+- Update user with ID
+![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/update.png)
+- Delete user with ID
+![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/delete.png)
+
 
 
 ### Prerequisites
