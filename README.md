@@ -3,6 +3,7 @@
 This is a Spring Boot application that demonstrates a simple REST API for managing user data.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
@@ -30,6 +31,7 @@ This Spring Boot application provides a REST API for managing user data. It lets
 ## Getting Started
 
 ## EndPoints
+
 1. **localhost:8080/** ==> HomePage
 2. **localhost:8080/save** ==> Insert | Put | Create user
 3. **localhost:8080/users** ==> Select | Get | Read all users
@@ -40,19 +42,17 @@ This Spring Boot application provides a REST API for managing user data. It lets
 ## Screenshots
 
 - Home Page
-![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/HomePage.png)
+  ![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/HomePage.png)
 - Save User
-![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/save.png)
+  ![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/save.png)
 - Get all Users
-![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/users.png)
+  ![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/users.png)
 - Get User by ID
-![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/user_id.png)
+  ![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/user_id.png)
 - Update user with ID
-![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/update.png)
+  ![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/update.png)
 - Delete user with ID
-![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/delete.png)
-
-
+  ![App Screenshot](https://github.com/US2002/CRUD_REST_API/blob/main/assets/delete.png)
 
 ### Prerequisites
 
@@ -63,29 +63,31 @@ This Spring Boot application provides a REST API for managing user data. It lets
 ### Installation
 
 1. Clone the repository:
+
 - git clone https://github.com/US2002/CRUD_REST_API.git
 - cd your-repo
 
 2. Configure the database:
+
 - Create a MySQL database named `restapi`.
 - Update the database connection settings in `src/main/resources/application.properties`.
 
 3. Build and run the application:
-- ./mvnw spring-boot:run
 
+- ./mvnw spring-boot:run
 
 ## Usage
 
 - Access the application at http://localhost:8080.
 - Use Postman or any API testing tool to interact with the API.
 
-
 ## Running the project with MySQL
-This project uses an in-memory database so that you don't have to install a database in order to run it. However, converting it to run with another relational database such as MySQL or PostgreSQL is very easy. Since the project uses Spring Data and the Repository pattern, it's even fairly easy to back the same service with MongoDB. 
 
-Here is what you would do to back the services with MySQL, for example: 
+This project uses an in-memory database so that you don't have to install a database in order to run it. However, converting it to run with another relational database such as MySQL or PostgreSQL is very easy. Since the project uses Spring Data and the Repository pattern, it's even fairly easy to back the same service with MongoDB.
 
-### In pom.xml add: 
+Here is what you would do to back the services with MySQL, for example:
+
+### In pom.xml add:
 
 ```
         <dependency>
@@ -94,27 +96,20 @@ Here is what you would do to back the services with MySQL, for example:
         </dependency>
 ```
 
-### Append this to the end of application.yml: 
+### Append this to the end of application.properties:
 
 ```
 ---
-spring:
-  profiles: mysql
+spring.datasource.url=jdbc:mysql://localhost:3306/crudusers?useSSL=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=2580
+spring.jpa.hibernate.ddl-auto=update
 
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://<your_mysql_host_or_ip>/bootexample
-    username: <your_mysql_username>
-    password: <your_mysql_password>
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
 
-  jpa:
-    hibernate:
-      dialect: org.hibernate.dialect.MySQLInnoDBDialect
-      ddl-auto: update # todo: in non-dev environments, comment this out:
-
-
-hotel.service:
-  name: 'test profile:'
+#!For SQL Server
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 ```
 
 ### Then run is using the 'mysql' profile:
@@ -123,6 +118,32 @@ hotel.service:
         java -jar -Dspring.profiles.active=mysql target/spring-boot-rest-example-0.5.0.war
 or
         mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=mysql"
+```
+
+## Running the project with MongoDB
+
+This guide will walk you through the process of setting up and running a Spring Boot project that uses a MongoDB database for data storage.
+
+### In pom.xml add:
+
+```
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-mongodb</artifactId>
+		    </dependency>
+```
+
+### Append this to the end of application.properties:
+
+```
+---
+#!For Spring LocalHost
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=userDB
+
+#!For Spring Cloud Host
+spring.data.mongodb.uri=mongodb+srv://<UserName>:<Password>@<ClusterName>.mongodb.net/<DataBaseName>?retryWrites=true&w=majority
 ```
 
 ## Contributing
