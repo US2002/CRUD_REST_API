@@ -1,8 +1,13 @@
 package com.ujjawal.restapi.repo;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+//!For SQL // import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import com.ujjawal.restapi.models.User;
 
-public interface UserRepo extends JpaRepository<User, Long> {
+//!For SQL // public interface UserRepo extends JpaRepository<User, Long> {
+@Repository
+public interface UserRepo extends MongoRepository<User, Long> {
+
 }

@@ -1,24 +1,26 @@
 package com.ujjawal.restapi.models;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.*;
 
-@Entity
+@Document(collection = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // !For SQL @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @jakarta.validation.constraints.NotBlank(message = "Username is required")
-    @Column
+    // !For SQL //@Column
     private String username;
 
     @jakarta.validation.constraints.NotBlank(message = "Email is required")
     @jakarta.validation.constraints.Email(message = "Invalid email format")
-    @Column(unique = true)
+    // !For SQL // @Column(unique = true)
     private String email;
 
     @jakarta.validation.constraints.NotBlank(message = "Password is required")
-    @Column
+    // !For SQL // @Column
     private String pwd;
 
     /**
