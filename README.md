@@ -1,6 +1,8 @@
 # Spring Boot REST API Example
 
 This is a Spring Boot application that demonstrates a simple REST API for managing user data.
+** Server is Live on ** : https://crud-rest-api-gh0x.onrender.com
+Can access various endpoints using this URL
 
 ## Table of Contents
 
